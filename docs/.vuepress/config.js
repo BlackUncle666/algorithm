@@ -4,7 +4,7 @@ module.exports = ctx => ({
   locales: {
     '/': {
       lang: 'zh-CN',
-      title: '前端手册-程序员黑叔',
+      title: '算法手册-程序员黑叔',
       description: '愿意天下没有难学的大前端'
     }
   },
@@ -76,7 +76,21 @@ function renderSiderBar() {
     title: '简单算法',
     collapsable: true,
     children: [
-      'algorithm',
+      'simpleAlgorithmOne',
+    ]
+  },
+  {
+    title: '中等算法',
+    collapsable: true,
+    children: [
+      'difficultAlgorithm',
+    ]
+  },
+  {
+    title: '困难算法',
+    collapsable: true,
+    children: [
+      'difficultAlgorithm',
     ]
   }
   ])
