@@ -1,8 +1,13 @@
 # leetcode（1/2/3/4/5/6/7/8/9/10）
 
 ## 1. 两数之和
+![](../pic/twoSum.png)
 ```
-//  两数之和
+/**
+ * 两数之和算法
+ * array 数据
+ * target 目标和
+ */
 const twoSum = (array, target) => {
     let map = new Map()
     for (let index = 0; index < array.length; index++) {
@@ -15,5 +20,3 @@ const twoSum = (array, target) => {
     }
 }
 ```
-
-Medium

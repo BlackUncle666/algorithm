@@ -2,7 +2,11 @@
 
 ## 1. 两数之和
 ```
-//  两数之和
+/**
+ * 两数之和算法
+ * array 数据
+ * target 目标和
+ */
 const twoSum = (array, target) => {
     let map = new Map()
     for (let index = 0; index < array.length; index++) {
@@ -15,5 +19,3 @@ const twoSum = (array, target) => {
     }
 }
 ```
-
-Medium
