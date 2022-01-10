@@ -73,95 +73,11 @@ function renderSiderBar() {
     ]
   },
   {
-    title: '前端基础',
+    title: '简单算法',
     collapsable: true,
     children: [
-      'html5',
-      'css3',
-      'cssQue',
-      'JS',
-      'ES6'
+      'algorithm',
     ]
-  },
-  {
-    title: '浏览器基础',
-    collapsable: true,
-    children: [
-      'browser'
-    ]
-  },
-  {
-    title: '框架原理',
-    collapsable: true,
-    children: [
-      'vue',
-      'react'
-    ]
-  },
-  {
-    title: '手写源码',
-    collapsable: true,
-    children: [
-      'write'
-    ]
-  },
-  {
-    title: '工程化',
-    collapsable: true,
-    children: [
-      'webpack'
-    ]
-  },
-
-  {
-    title: 'Typescript',
-    collapsable: true,
-    children: [
-      'TS'
-    ]
-  },
-  {
-    title: '计算机基础',
-    collapsable: true,
-    children: [
-      'HTTP',
-    ]
-  },
-  {
-    title: '数据结构与算法',
-    collapsable: true,
-    children: [
-      'structure',
-      'algorithmImportant',
-      'algorithm'
-    ]
-  },
-  {
-    title: '项目类',
-    collapsable: true,
-    children: [
-      'project',
-      'login',
-      'resume'
-    ]
-  },
-  {
-    title: '编程相关',
-    collapsable: true,
-    children: [
-      'pattern'
-    ]
-  },
-  {
-    title: '其他',
-    collapsable: true,
-    children: [
-      'waibao',
-      'UI',
-      'young',
-      'month30k',
-      'pinxixi'
-    ]
-  },
+  }
   ])
 }
