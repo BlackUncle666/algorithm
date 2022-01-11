@@ -1,4 +1,4 @@
-# leetcode（1/2/3/4/5/6/7/8/9/10）
+# leetcode（1/3/4/5/6/7/8/9/10）
 
 ## 1. 两数之和
 ![](../pic/twoSum.png)
@@ -18,5 +18,27 @@ const twoSum = (array, target) => {
             map.set(array[index], index)
         }
     }
+}
+```
+
+## 3. 无重复字符的最长子串
+![](../pic/lengthOfLongestSubstring.png)
+```
+/**
+ * 无重复字符的最长子串
+ * s 字符串
+ */
+const lengthOfLongestSubstring = (s) => {
+    let arr = [];
+    let max = 0;
+    for (let i = 0; i < s.length; i++) {
+        let index = arr.indexOf(s[i]);
+        if (index !== -1) {
+            arr.splice(0, index + 1);
+        }
+        arr.push(s.charAt(i));
+        max = Math.max(arr.length, max)
+    }
+    return max;
 }
 ```
