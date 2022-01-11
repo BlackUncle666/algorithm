@@ -5,8 +5,8 @@
 ```
 /**
  * 两数之和算法
- * array 数据
- * target 目标和
+ * @param {array} array 
+ * @param {number} target 
  */
 const twoSum = (array, target) => {
     let map = new Map()
@@ -26,7 +26,7 @@ const twoSum = (array, target) => {
 ```
 /**
  * 无重复字符的最长子串
- * s 字符串
+ * @param {string} s
  */
 const lengthOfLongestSubstring = (s) => {
     let arr = [];
@@ -41,4 +41,28 @@ const lengthOfLongestSubstring = (s) => {
     }
     return max;
 }
+```
+
+## 5. 最长回文子串
+![](../pic/longestPalindrome.png)
+```
+
+```
+
+## 7. 整数反转
+![](../pic/intReverse.png)
+```
+/**
+ * 7. 整数反转
+ * @param {number} x
+ * @return {number}
+ */
+const intReverse = (x) => {
+    let result = 0;
+    while (x !== 0) {
+        result = result * 10 + x % 10;
+        x = (x / 10) | 0;
+    }
+    return (result | 0) === result ? result : 0;
+};
 ```
