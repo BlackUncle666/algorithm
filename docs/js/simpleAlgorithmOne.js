@@ -74,10 +74,18 @@ const intReverse = (x) => {
     let result = 0;
     while (x !== 0) {
         result = result * 10 + x % 10;
-        result
         x = (x / 10) | 0;
-        x
     }
     return (result | 0) === result ? result : 0;
 };
 intReverse(-123)
+
+
+/**
+ * 9. 回文数
+ * @param {number} x
+ * @return {number}
+ */
+const isPalindrome = (x) => {
+    return x.toString() == x.toString().split('').reverse().join('')
+};

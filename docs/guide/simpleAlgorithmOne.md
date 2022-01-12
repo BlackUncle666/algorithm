@@ -1,4 +1,4 @@
-# leetcode（1/3/4/5/6/7/8/9/10）
+# leetcode（1/3/5/7/9/10）
 
 ## 1. 两数之和
 ![](../pic/twoSum.png)
@@ -46,7 +46,36 @@ const lengthOfLongestSubstring = (s) => {
 ## 5. 最长回文子串
 ![](../pic/longestPalindrome.png)
 ```
-
+/**
+ * 5. 最长回文子串
+ * @param {string} s
+ * @return {string}
+ */
+const longestPalindrome = (s) => {
+    if (s.length < 2) {
+        return s
+    }
+    let res = ''
+    for (let i = 0; i < s.length; i++) {
+        // 回文子串长度是奇数
+        helper(i, i)
+        // 回文子串长度是偶数
+        helper(i, i + 1)
+    }
+    function helper(m, n) {
+        while (m >= 0 && n < s.length && s[m] == s[n]) {
+            m--
+            n++
+        }
+        // 注意此处m,n的值循环完后  是恰好不满足循环条件的时刻
+        // 此时m到n的距离为n-m+1，但是mn两个边界不能取 所以应该取m+1到n-1的区间  长度是n-m-1
+        if (n - m - 1 > res.length) {
+            // slice也要取[m+1,n-1]这个区间 
+            res = s.slice(m + 1, n)
+        }
+    }
+    return res
+};
 ```
 
 ## 7. 整数反转
@@ -64,5 +93,19 @@ const intReverse = (x) => {
         x = (x / 10) | 0;
     }
     return (result | 0) === result ? result : 0;
+};
+```
+
+
+## 9. 回文数
+![](../pic/isPalindrome.png)
+```
+/**
+ * 9. 回文数
+ * @param {number} x
+ * @return {number}
+ */
+const isPalindrome = (x) => {
+    return x.toString() == x.toString().split('').reverse().join('')
 };
 ```
