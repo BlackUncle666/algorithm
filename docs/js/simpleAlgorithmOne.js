@@ -116,7 +116,7 @@ const intToRoman = (num) => {
  * @param {string} numStr
  * @return {string[]}
  */
- const letterCombinations = (numStr) => {
+const letterCombinations = (numStr) => {
     // 建立电话号码键盘映射
     const map = ['', 1, 'abc', 'def', 'ghi', 'jkl', 'mno', 'pqrs', 'tuv', 'wxyz'];
     // 把输入字符串按单字符分隔变成数组，234=>[2,3,4]
@@ -145,3 +145,35 @@ const intToRoman = (num) => {
     }
     return combinationsHandler(keyArr)
 }
+
+/**
+ * 20. 有效的括号
+ * @param {string} s
+ * @return {boolean}
+ */
+const isValid = (s) => {
+    const n = s.length;
+    if (n % 2 === 1) {
+        return false;
+    }
+    const pairs = new Map([
+        [')', '('],
+        [']', '['],
+        ['}', '{']
+    ]);
+    const stk = [];
+    for (let ch of s) {
+        if (pairs.has(ch)) {
+            if (!stk.length || stk[stk.length - 1] !== pairs.get(ch)) {
+                return false;
+            }
+            stk.pop();
+        }
+        else {
+            stk.push(ch);
+        }
+    };
+    return !stk.length;
+};
+
+

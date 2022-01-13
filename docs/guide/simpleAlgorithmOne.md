@@ -1,4 +1,4 @@
-# leetcode（1/3/5/7/9/12/17）
+# leetcode（1/3/5/7/9/12/17/20）
 
 ## 1. 两数之和
 ![](../pic/twoSum.png)
@@ -172,4 +172,38 @@ const intToRoman = (num) => {
     }
     return combinationsHandler(keyArr)
 }
+```
+
+## 20. 有效的括号
+![](../pic/isValid.png)
+```
+/**
+ * 20. 有效的括号
+ * @param {string} s
+ * @return {boolean}
+ */
+const isValid = (s) => {
+    const n = s.length;
+    if (n % 2 === 1) {
+        return false;
+    }
+    const pairs = new Map([
+        [')', '('],
+        [']', '['],
+        ['}', '{']
+    ]);
+    const stk = [];
+    for (let ch of s) {
+        if (pairs.has(ch)) {
+            if (!stk.length || stk[stk.length - 1] !== pairs.get(ch)) {
+                return false;
+            }
+            stk.pop();
+        }
+        else {
+            stk.push(ch);
+        }
+    };
+    return !stk.length;
+};
 ```
