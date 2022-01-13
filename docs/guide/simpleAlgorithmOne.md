@@ -1,4 +1,4 @@
-# leetcode（1/3/5/7/9/10）
+# leetcode（1/3/5/7/9/12）
 
 ## 1. 两数之和
 ![](../pic/twoSum.png)
@@ -107,5 +107,30 @@ const intReverse = (x) => {
  */
 const isPalindrome = (x) => {
     return x.toString() == x.toString().split('').reverse().join('')
+};
+```
+
+## 12. 整数转罗马数字
+![](../pic/intToRoman.png)
+
+```
+/**
+ * 12. 整数转罗马数字
+ * @param {number} num
+ * @return {string}
+ */
+const intToRoman = (num) => {
+    const valueSymbols = [[1000, "M"], [900, "CM"], [500, "D"], [400, "CD"], [100, "C"], [90, "XC"], [50, "L"], [40, "XL"], [10, "X"], [9, "IX"], [5, "V"], [4, "IV"], [1, "I"]];
+    const roman = [];
+    for (const [value, symbol] of valueSymbols) {
+        while (num >= value) {
+            num -= value;
+            roman.push(symbol);
+        }
+        if (num == 0) {
+            break;
+        }
+    }
+    return roman.join('');
 };
 ```
