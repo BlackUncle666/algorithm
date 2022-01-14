@@ -1,8 +1,3 @@
-# leetcode（28）
-
-## 28. 实现 strStr()
-![](../pic/simpleAlgorithmTwo/strStr.png)
-```
 /**
  * 28. 实现 strStr()
  * @param {string} haystack
@@ -25,4 +20,3 @@ const strStr = (haystack, needle) => {
     }
     return -1;
 };
-```
