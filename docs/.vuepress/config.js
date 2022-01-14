@@ -77,6 +77,7 @@ function renderSiderBar() {
     collapsable: true,
     children: [
       'simpleAlgorithmOne',
+      'simpleAlgorithmTwo'
     ]
   },
   {
