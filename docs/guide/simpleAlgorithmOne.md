@@ -1,7 +1,7 @@
-# leetcode（1/3/5/7/9/12/17/20）
+# leetcode（1/3/5/7/9/12/17/20/26/27）
 
 ## 1. 两数之和
-![](../pic/twoSum.png)
+![](../pic/simpleAlgorithmOne/twoSum.png)
 ```
 /**
  * 两数之和算法
@@ -22,7 +22,7 @@ const twoSum = (array, target) => {
 ```
 
 ## 3. 无重复字符的最长子串
-![](../pic/lengthOfLongestSubstring.png)
+![](../pic/simpleAlgorithmOne/lengthOfLongestSubstring.png)
 ```
 /**
  * 无重复字符的最长子串
@@ -44,7 +44,7 @@ const lengthOfLongestSubstring = (s) => {
 ```
 
 ## 5. 最长回文子串
-![](../pic/longestPalindrome.png)
+![](../pic/simpleAlgorithmOne/longestPalindrome.png)
 ```
 /**
  * 5. 最长回文子串
@@ -79,7 +79,7 @@ const longestPalindrome = (s) => {
 ```
 
 ## 7. 整数反转
-![](../pic/intReverse.png)
+![](../pic/simpleAlgorithmOne/intReverse.png)
 ```
 /**
  * 7. 整数反转
@@ -98,7 +98,7 @@ const intReverse = (x) => {
 
 
 ## 9. 回文数
-![](../pic/isPalindrome.png)
+![](../pic/simpleAlgorithmOne/isPalindrome.png)
 ```
 /**
  * 9. 回文数
@@ -111,7 +111,7 @@ const isPalindrome = (x) => {
 ```
 
 ## 12. 整数转罗马数字
-![](../pic/intToRoman.png)
+![](../pic/simpleAlgorithmOne/intToRoman.png)
 
 ```
 /**
@@ -136,7 +136,7 @@ const intToRoman = (num) => {
 ```
 
 ## 17. 电话号码的字母组合
-![](../pic/letterCombinations.png)
+![](../pic/simpleAlgorithmOne/letterCombinations.png)
 ```
 /**
  * 17. 电话号码的字母组合
@@ -175,7 +175,7 @@ const intToRoman = (num) => {
 ```
 
 ## 20. 有效的括号
-![](../pic/isValid.png)
+![](../pic/simpleAlgorithmOne/isValid.png)
 ```
 /**
  * 20. 有效的括号
@@ -209,7 +209,7 @@ const isValid = (s) => {
 ```
 
 ## 26. 删除有序数组中的重复项
-![](../pic/removeDuplicates.png)
+![](../pic/simpleAlgorithmOne/removeDuplicates.png)
 ```
 /**
  * 26. 删除有序数组中的重复项
@@ -230,5 +230,27 @@ const removeDuplicates = (nums) => {
         ++fast;
     }
     return slow;
+};
+```
+
+## 27. 移除元素
+![](../pic/simpleAlgorithmOne/removeElement.png)
+```
+/**
+ * 27. 移除元素
+ * @param {number[]} nums
+ * @param {number} val
+ * @return {number}
+ */
+const removeElement = (nums, val) => {
+    const n = nums.length;
+    let left = 0;
+    for (let right = 0; right < n; right++) {
+        if (nums[right] !== val) {
+            nums[left] = nums[right];
+            left++;
+        }
+    }
+    return left;
 };
 ```

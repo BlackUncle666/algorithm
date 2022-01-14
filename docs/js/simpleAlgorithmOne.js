@@ -197,4 +197,21 @@ const removeDuplicates = (nums) => {
     }
     return slow;
 };
-removeDuplicates([1, 1, 2, 2, 2, 3])
+
+/**
+ * 27. 移除元素
+ * @param {number[]} nums
+ * @param {number} val
+ * @return {number}
+ */
+const removeElement = (nums, val) => {
+    const n = nums.length;
+    let left = 0;
+    for (let right = 0; right < n; right++) {
+        if (nums[right] !== val) {
+            nums[left] = nums[right];
+            left++;
+        }
+    }
+    return left;
+};
