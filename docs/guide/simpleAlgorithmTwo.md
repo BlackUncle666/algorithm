@@ -28,6 +28,7 @@ const strStr = (haystack, needle) => {
 ```
 
 ## 39. 组合总和
+![](../pic/simpleAlgorithmTwo/combinationSum.png)
 ```
 /**
  * 39. 组合总和
