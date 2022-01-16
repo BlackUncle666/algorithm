@@ -57,3 +57,36 @@ const combinationSum = (candidates, target) => {
     return ans;
 };
 ```
+
+## 40. 组合总和 II
+![](../pic/simpleAlgorithmTwo/combinationSum2.png)
+```
+/**
+ * 40. 组合总和 II
+ * @param {number[]} candidates
+ * @param {number} target
+ * @return {number[][]}
+ */
+const combinationSum2 = (candidates, target) => {
+    candidates.sort((a, b) => a - b)
+    let ans = [];
+    let backTracing = (start, path, sum) => {
+        if (sum >= target) {
+            if (sum === target) {
+                ans.push(path.slice())
+            }
+            return
+        }
+        for (let i = start; i < candidates.length; i++) {
+            if (i - 1 >= start && candidates[i - 1] == candidates[i]) {
+                continue;
+            }
+            path.push(candidates[i])
+            backTracing(i + 1, path, sum + candidates[i])
+            path.pop()
+        }
+    }
+    backTracing(0, [], 0)
+    return ans
+};
+```
