@@ -222,3 +222,22 @@ const myPow = (x, n) => {
     return myPow(x * x, n / 2);
 };
 ```
+
+
+## 53. 最大子数组和
+![](../pic/simpleAlgorithmTwo/maxSubArray.png)
+```
+/**
+ * 53. 最大子数组和
+ * @param {number[]} nums
+ * @return {number}
+ */
+const maxSubArray = (nums) => {
+    let pre = 0, maxAns = nums[0];
+    nums.forEach((x) => {
+        pre = Math.max(pre + x, x);
+        maxAns = Math.max(maxAns, pre);
+    });
+    return maxAns;
+};
+```
