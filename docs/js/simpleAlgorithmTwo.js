@@ -202,3 +202,20 @@ const maxSubArray = (nums) => {
     });
     return maxAns;
 };
+
+/**
+ * 55. 跳跃游戏
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+const canJump = (nums) => {
+    if (nums.length === 1) return true
+    let cover = 0
+    for (let i = 0; i <= cover; i++) {
+        cover = Math.max(cover, i + nums[i])
+        if (cover >= nums.length - 1) {
+            return true
+        }
+    }
+    return false
+};
