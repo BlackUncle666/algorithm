@@ -51,3 +51,14 @@ const insert = function (intervals, newInterval) {
     }
     return res;
 };
+
+
+/**
+ * 58. 最后一个单词的长度
+ * @param {string} s
+ * @return {number}
+ */
+const lengthOfLastWord = (s) => {
+    const arr = s.trim().split(' ');
+    return arr[arr.length - 1].length
+};
