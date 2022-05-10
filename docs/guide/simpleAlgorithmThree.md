@@ -1,4 +1,4 @@
-# leetcode（56）
+# leetcode（56/57/58/61/62/63/64/67/69/70）
 
 ## 56. 合并区间
 ![](../pic/simpleAlgorithmThree/merge.png)
@@ -141,7 +141,7 @@ const uniquePaths = (m, n) => {
 };
 ```
 
-## 不同路径 II
+## 63. 不同路径 II
 ![](../pic/simpleAlgorithmThree/uniquePathsWithObstacles.png)
 ```
 /**
