@@ -1,4 +1,4 @@
-# leetcode（77）
+# leetcode（77/78/88/93/94/98/101/102/104/110）
 
 ## 77. 组合
 ![](../pic/simpleAlgorithmFour/combine.png)
@@ -195,5 +195,87 @@ const isSymmetric = (root) => {
         return true;
     }
     return compareNode(root.left, root.right);
+};
+```
+
+## 102. 二叉树的层序遍历
+![](../pic/simpleAlgorithmFour/levelOrder.png)
+```
+/**
+ * @param {TreeNode} root
+ * @return {number[][]}
+ */
+const levelOrder = (root) => {
+    const ret = [];
+    if (!root) {
+        return ret;
+    }
+
+    const q = [];
+    q.push(root);
+    while (q.length !== 0) {
+        const currentLevelSize = q.length;
+        ret.push([]);
+        for (let i = 1; i <= currentLevelSize; ++i) {
+            const node = q.shift();
+            ret[ret.length - 1].push(node.val);
+            if (node.left) q.push(node.left);
+            if (node.right) q.push(node.right);
+        }
+    }
+
+    return ret;
+};
+```
+
+## 104. 二叉树的最大深度
+![](../pic/simpleAlgorithmFour/maxDepth.png)
+```
+/**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+const maxDepth = (root) => {
+    if (!root) {
+        return 0;
+    } else {
+        const left = maxDepth(root.left);
+        const right = maxDepth(root.right);
+        return Math.max(left, right) + 1;
+    }
+};
+```
+
+## 110. 平衡二叉树
+![](../pic/simpleAlgorithmFour/isBalanced.png)
+```
+/**
+ * @param {TreeNode} root
+ * @return {boolean}
+ */
+const isBalanced = (root) => {
+    //还是用递归三部曲  + 后序遍历 左右中 当前左子树右子树高度相差大于1就返回-1
+    // 1. 确定递归函数参数以及返回值
+    const getDepth = function (node) {
+        // 2. 确定递归函数终止条件
+        if (node === null) {
+            return 0;
+        }
+        // 3. 确定单层递归逻辑
+        let leftDepth = getDepth(node.left);//左子树高度
+        if (leftDepth === -1) {
+            return -1;
+        }
+        let rightDepth = getDepth(node.right);//右子树高度
+        if (rightDepth === -1) {
+            return -1;
+        }
+        if (Math.abs(leftDepth - rightDepth) > 1) {
+            return -1;
+        } else {
+            return 1 + Math.max(leftDepth, rightDepth);
+        }
+    }
+    return getDepth(root) === -1 ? false : true;
 };
 ```
