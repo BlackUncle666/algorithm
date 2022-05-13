@@ -133,3 +133,106 @@ const longestConsecutive = (nums) => {
     return max;
 };
 ```
+
+## 136. 只出现一次的数字
+![](../pic/simpleAlgorithmFive/singleNumber.png)
+```
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+const singleNumber = (nums) => {
+    let ans = 0;
+    for (const num of nums) {
+        ans ^= num;
+    }
+    return ans;
+};
+```
+
+## 144. 二叉树的前序遍历
+![](../pic/simpleAlgorithmFive/preorderTraversal.png)
+```
+/**
+ * @param {TreeNode} root
+ * @return {number[]}
+ */
+const preorderTraversal = (root, res = []) => {
+    if (!root) return res;
+    res.push(root.val);
+    preorderTraversal(root.left, res)
+    preorderTraversal(root.right, res)
+    return res;
+};
+```
+
+
+## 145. 二叉树的后序遍历
+![](../pic/simpleAlgorithmFive/postorderTraversal.png)
+```
+/**
+ * @param {TreeNode} root
+ * @return {number[]}
+ */
+const postorderTraversal =  (root, res = []) =>{
+    if (!root) return res;
+    postorderTraversal(root.left, res);
+    postorderTraversal(root.right, res);
+    res.push(root.val);
+    return res;
+};
+```
+
+## 146. LRU 缓存
+![](../pic/simpleAlgorithmFive/LRUCache.png)
+```
+/**
+ * @param {number} capacity
+ */
+var LRUCache = function(capacity) {
+    this.map = new Map();
+    this.capacity = capacity;
+};
+
+/** 
+ * @param {number} key
+ * @return {number}
+ */
+LRUCache.prototype.get = function(key) {
+    if(this.map.has(key)){
+        let value = this.map.get(key);
+        this.map.delete(key); // 删除后，再 set ，相当于更新到 map 最后一位
+        this.map.set(key, value);
+        return value
+    } else {
+        return -1
+    }
+};
+
+/** 
+ * @param {number} key 
+ * @param {number} value
+ * @return {void}
+ */
+LRUCache.prototype.put = function(key, value) {
+    // 如果已有，那就要更新，即要先删了再进行后面的 set
+    if(this.map.has(key)){
+        this.map.delete(key);
+    }
+    this.map.set(key, value);
+    // put 后判断是否超载
+    if(this.map.size > this.capacity){
+        this.map.delete(this.map.keys().next().value);
+    }
+
+};
+
+/**
+ * Your LRUCache object will be instantiated and called as such:
+ * var obj = new LRUCache(capacity)
+ * var param_1 = obj.get(key)
+ * obj.put(key,value)
+ */
+
+```
+
