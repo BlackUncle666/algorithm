@@ -1,4 +1,4 @@
-# leetcode（1/3/5/7/9/12/17/20/26/27）
+# leetcode（1-27）
 
 ## 1. 两数之和
 ![](../pic/simpleAlgorithmOne/twoSum.png)

@@ -1,4 +1,4 @@
-# leetcode（77/78/88/93/94/98/101/102/104/110）
+# leetcode（77-110）
 
 ## 77. 组合
 ![](../pic/simpleAlgorithmFour/combine.png)

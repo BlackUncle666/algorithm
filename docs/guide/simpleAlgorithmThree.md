@@ -1,4 +1,4 @@
-# leetcode（56/57/58/61/62/63/64/67/69/70）
+# leetcode（56-70）
 
 ## 56. 合并区间
 ![](../pic/simpleAlgorithmThree/merge.png)

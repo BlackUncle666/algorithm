@@ -1,4 +1,4 @@
-# leetcode（28/39/40/42/46/48/49/50/53/55）
+# leetcode（28-55）
 
 ## 28. 实现 strStr()
 ![](../pic/simpleAlgorithmTwo/strStr.png)
