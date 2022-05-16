@@ -106,6 +106,20 @@ function renderSiderBar() {
     children: [
       'simpleAlgorithmFive',
     ]
+  },
+  {
+    title: '算法6',
+    collapsable: true,
+    children: [
+      'simpleAlgorithmSix',
+    ]
+  },
+  {
+    title: '算法7',
+    collapsable: true,
+    children: [
+      'simpleAlgorithmSeven',
+    ]
   }
   ])
 }
